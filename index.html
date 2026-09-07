@@ -260,3 +260,952 @@
             overflow: hidden;
             background: var(--bg-card);
             border: 1px solid var(--border);
+            margin-bottom: 2.5rem;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .hero-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px -15px var(--accent-glow);
+        }
+
+        .hero-img-wrapper {
+            position: relative;
+            overflow: hidden;
+            min-height: 380px;
+        }
+
+        .hero-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .hero-card:hover .hero-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .hero-content {
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .tag-badge {
+            align-self: flex-start;
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .hero-title {
+            font-size: 2rem;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .hero-description {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .meta-info {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .meta-info img {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+        }
+
+        /* Filter Pills */
+        .category-bar {
+            display: flex;
+            gap: 0.8rem;
+            overflow-x: auto;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+            scrollbar-width: none;
+        }
+
+        .category-pill {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: var(--transition);
+        }
+
+        .category-pill:hover, .category-pill.active {
+            background: var(--accent-gradient);
+            color: white;
+            border-color: transparent;
+        }
+
+        /* Grid Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Card de Notícia Regular */
+        .news-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .news-card:hover {
+            transform: translateY(-50px 5px);
+            transform: translateY(-6px);
+            border-color: var(--accent);
+            box-shadow: var(--shadow);
+        }
+
+        .card-img-box {
+            position: relative;
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .card-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .news-card:hover .card-img-box img {
+            transform: scale(1.08);
+        }
+
+        .card-content {
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            line-height: 1.4;
+            margin: 0.6rem 0;
+            color: var(--text-primary);
+        }
+
+        .card-excerpt {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 1.2rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border);
+            padding-top: 0.8rem;
+        }
+
+        .bookmark-btn {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .bookmark-btn:hover, .bookmark-btn.saved {
+            color: #eab308;
+        }
+
+        /* Sidebar Widgets */
+        .sidebar-widget {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .trending-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .trending-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.8rem;
+            border-radius: 12px;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .trending-item:hover {
+            background: var(--bg-card-hover);
+        }
+
+        .trending-num {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--accent);
+            opacity: 0.8;
+            min-width: 28px;
+        }
+
+        .trending-text {
+            font-size: 0.92rem;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        /* Category Cards Grid */
+        .cat-widget-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+        }
+
+        .cat-box {
+            background: var(--bg-card-hover);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .cat-box:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .cat-box i {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .cat-box h4 {
+            font-size: 0.88rem;
+            font-weight: 700;
+        }
+
+        /* Newsletter Widget */
+        .newsletter-card {
+            background: var(--accent-gradient);
+            color: white;
+            padding: 1.8rem;
+            border-radius: var(--radius);
+            text-align: center;
+        }
+
+        .newsletter-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .newsletter-card p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            margin-bottom: 1.2rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .newsletter-form input {
+            padding: 0.75rem 1rem;
+            border-radius: 30px;
+            border: none;
+            outline: none;
+            font-size: 0.9rem;
+        }
+
+        .newsletter-form button {
+            background: #0f172a;
+            color: white;
+            border: none;
+            padding: 0.75rem;
+            border-radius: 30px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .newsletter-form button:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* Modal Notícia */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+            padding: 1rem;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-body {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            max-width: 750px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 2rem;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .modal-overlay.active .modal-body {
+            transform: translateY(0);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1.2rem;
+            right: 1.2rem;
+            background: var(--bg-card-hover);
+            border: none;
+            color: var(--text-primary);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin: 1rem 0 1.5rem 0;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .action-chip {
+            background: var(--bg-card-hover);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: var(--transition);
+        }
+
+        .action-chip:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            margin-top: 4rem;
+            padding: 3rem 1.5rem 1.5rem 1.5rem;
+        }
+
+        .footer-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .footer-copy {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-top: 1.5rem;
+        }
+
+        /* Toast Alert */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--accent-gradient);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 600;
+            box-shadow: var(--shadow);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 1100;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+            .hero-card {
+                grid-template-columns: 1fr;
+            }
+            .hero-img-wrapper {
+                min-height: 260px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero-title {
+                font-size: 1.5rem;
+            }
+            .header-container {
+                padding: 0.8rem 1rem;
+            }
+            .search-box input {
+                width: 130px;
+            }
+            .search-box input:focus {
+                width: 170px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="progress-bar"></div>
+
+    <div class="ticker-wrap">
+        <div class="ticker-badge"><i class="fa-solid fa-bolt mr-1"></i> AO VIVO</div>
+        <div class="ticker">
+            <div class="ticker-item">⚡ IA domina os novos modelos de negócios globais em 2026</div>
+            <div class="ticker-item">🚀 Exploração Espacial: Novas missões internacionais rumo a Marte</div>
+            <div class="ticker-item">📉 Crise Climática atinge recorde de discussões na ONU</div>
+            <div class="ticker-item">📱 Lançados os novos smartphones com IA embarcada nativa</div>
+        </div>
+    </div>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-paper-plane" style="color: var(--accent);"></i>
+                News<strong>Hub</strong>
+                <span class="badge">2026</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a class="active" onclick="filterCategory('todos')">Início</a></li>
+                <li><a onclick="filterCategory('tecnologia')">Tecnologia</a></li>
+                <li><a onclick="filterCategory('mundo')">Mundo</a></li>
+                <li><a onclick="filterCategory('saude')">Saúde</a></li>
+                <li><a onclick="filterCategory('esportes')">Esportes</a></li>
+                <li><a onclick="filterCategory('economia')">Economia</a></li>
+            </ul>
+
+            <div class="header-actions">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="searchInput" placeholder="Buscar notícias..." onkeyup="searchNews()">
+                </div>
+                
+                <button class="icon-btn" onclick="toggleTheme()" title="Alternar Tema">
+                    <i class="fa-solid fa-moon" id="themeIcon"></i>
+                </button>
+
+                <button class="icon-btn" onclick="filterCategory('favoritos')" title="Salvos">
+                    <i class="fa-solid fa-bookmark"></i>
+                    <span class="saved-count" id="savedCount">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="hero-card" onclick="openModal(heroData)">
+            <div class="hero-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1000&q=80" alt="IA 2026">
+            </div>
+            <div class="hero-content">
+                <span class="tag-badge"><i class="fa-solid fa-fire"></i> Destaque Principal</span>
+                <h1 class="hero-title">Inteligência Artificial domina o mercado global em 2026</h1>
+                <p class="hero-description">Empresas adotam IA para transformar completamente seus modelos de negócio, automatizar processos complexos e acelerar a inovação em escala global.</p>
+                <div class="meta-info">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Autor">
+                    <div>
+                        <strong>Gabriel Guzela</strong><br>
+                        <span><i class="fa-regular fa-clock"></i> 4 min de leitura • 12.4k visualizações</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-bar">
+            <button class="category-pill active" onclick="filterCategory('todos', this)">🔥 Todos</button>
+            <button class="category-pill" onclick="filterCategory('tecnologia', this)">💻 Tecnologia</button>
+            <button class="category-pill" onclick="filterCategory('mundo', this)">🌐 Mundo</button>
+            <button class="category-pill" onclick="filterCategory('ciencia', this)">🚀 Ciência</button>
+            <button class="category-pill" onclick="filterCategory('economia', this)">📈 Economia</button>
+            <button class="category-pill" onclick="filterCategory('saude', this)">🩺 Saúde</button>
+            <button class="category-pill" onclick="filterCategory('esportes', this)">⚽ Esportes</button>
+        </div>
+
+        <div class="main-layout">
+            
+            <div>
+                <h2 class="section-title"><i class="fa-solid fa-newspaper" style="color: var(--accent);"></i> Últimas Notícias</h2>
+                <div class="news-grid" id="newsGrid">
+                    </div>
+            </div>
+
+            <aside class="sidebar">
+                
+                <div class="sidebar-widget">
+                    <h3 class="section-title" style="font-size: 1.1rem;"><i class="fa-solid fa-bolt" style="color: #f59e0b;"></i> Trending 🔥</h3>
+                    <ul class="trending-list">
+                        <li class="trending-item" onclick="openModal(newsArticles[0])">
+                            <span class="trending-num">01</span>
+                            <div class="trending-text">IA substituindo empregos ou criando novas carreiras?</div>
+                        </li>
+                        <li class="trending-item" onclick="openModal(newsArticles[1])">
+                            <span class="trending-num">02</span>
+                            <div class="trending-text">Brasil se consolida no mercado tecnológico global</div>
+                        </li>
+                        <li class="trending-item" onclick="openModal(newsArticles[2])">
+                            <span class="trending-num">03</span>
+                            <div class="trending-text">A nova corrida espacial rumo à exploração comercial da Lua</div>
+                        </li>
+                        <li class="trending-item" onclick="openModal(newsArticles[3])">
+                            <span class="trending-num">04</span>
+                            <div class="trending-text">Avanços da medicina com tratamentos de precisão genética</div>
+                        </li>
+                        <li class="trending-item" onclick="openModal(newsArticles[4])">
+                            <span class="trending-num">05</span>
+                            <div class="trending-text">Energia limpa bate recorde histórico de investimentos em 2026</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3 class="section-title" style="font-size: 1.1rem;"><i class="fa-solid fa-layer-group" style="color: var(--accent);"></i> Categorias</h3>
+                    <div class="cat-widget-grid">
+                        <div class="cat-box" onclick="filterCategory('tecnologia')">
+                            <i class="fa-solid fa-laptop-code"></i>
+                            <h4>Tech</h4>
+                        </div>
+                        <div class="cat-box" onclick="filterCategory('mundo')">
+                            <i class="fa-solid fa-earth-americas"></i>
+                            <h4>Mundo</h4>
+                        </div>
+                        <div class="cat-box" onclick="filterCategory('saude')">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                            <h4>Saúde</h4>
+                        </div>
+                        <div class="cat-box" onclick="filterCategory('esportes')">
+                            <i class="fa-solid fa-trophy"></i>
+                            <h4>Esportes</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="newsletter-card">
+                    <i class="fa-regular fa-paper-plane" style="font-size: 2rem; margin-bottom: 0.8rem;"></i>
+                    <h3>Boletim NewsHub</h3>
+                    <p>Receba diariamente o resumo das notícias mais importantes no seu e-mail.</p>
+                    <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+                        <input type="email" placeholder="Seu melhor e-mail" required>
+                        <button type="submit">Inscrever-se</button>
+                    </form>
+                </div>
+
+            </aside>
+
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="newsModal">
+        <div class="modal-body">
+            <button class="close-modal" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+            <span class="tag-badge" id="modalCategory">Mundo</span>
+            <h2 id="modalTitle" style="font-size: 1.8rem; margin-top: 0.5rem; line-height: 1.3;">Título da Notícia</h2>
+            <div class="meta-info" style="margin-top: 0.8rem;" id="modalMeta">Por Redação NewsHub • 2026</div>
+            <img src="" id="modalImg" class="modal-img" alt="Notícia">
+            <div class="modal-actions">
+                <button class="action-chip" onclick="speakText()"><i class="fa-solid fa-volume-high"></i> Ouvir Matéria</button>
+                <button class="action-chip" onclick="shareArticle()"><i class="fa-solid fa-share-nodes"></i> Compartilhar</button>
+            </div>
+            <p id="modalContent" style="color: var(--text-secondary); line-height: 1.8; font-size: 1.05rem; white-space: pre-line;"></p>
+        </div>
+    </div>
+
+    <div class="toast" id="toast">Ação realizada com sucesso!</div>
+
+    <footer>
+        <div class="footer-content">
+            <a href="#" class="logo">
+                News<strong>Hub</strong>
+            </a>
+            <div style="color: var(--text-secondary); font-size: 0.9rem;">
+                Informação rápida, moderna, precisa e global.
+            </div>
+            <div style="display: flex; gap: 1rem; font-size: 1.2rem; color: var(--text-secondary);">
+                <i class="fa-brands fa-twitter" style="cursor: pointer;"></i>
+                <i class="fa-brands fa-linkedin" style="cursor: pointer;"></i>
+                <i class="fa-brands fa-github" style="cursor: pointer;"></i>
+            </div>
+        </div>
+        <div class="footer-copy">
+            &copy; 2026 <strong>NewsHub</strong>. Criado e otimizado por Gabriel Guzela.
+        </div>
+    </footer>
+
+    <script>
+        // Dados das Notícias do Portal
+        const heroData = {
+            id: 'hero-1',
+            title: "Inteligência Artificial domina o mercado global em 2026",
+            category: "Tecnologia",
+            image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1000&q=80",
+            time: "4 min",
+            content: "O ano de 2026 consolida a maior transformação tecnológica do século. Empresas de todos os setores adotaram sistemas autônomos de Inteligência Artificial para redefinir fluxos de trabalho, otimizar a tomada de decisão em tempo real e personalizar experiências de consumo.\n\nEspecialistas apontam que a integração entre IA generativa e automação robótica gerou um salto de 40% na produtividade global, ao mesmo tempo em que estimula o surgimento de novas carreiras focadas na governança, segurança e ética dos algoritmos."
+        };
+
+        const newsArticles = [
+            {
+                id: '1',
+                title: "Crise climática avança no planeta",
+                category: "Mundo",
+                image: "https://images.unsplash.com/photo-1569163139599-0f4517e36f31?auto=format&fit=crop&w=600&q=80",
+                excerpt: "Eventos extremos se tornam mais frequentes em várias regiões do mundo exigindo planos emergenciais.",
+                content: "Relatórios internacionais divulgados nesta semana mostram que eventos climáticos extremos atingiram marcas históricas em 2026. Governos globais se reúnem em cúpulas de emergência para acelerar a transição energética e investir em infraestruturas resilientes às mudanças oceânicas e térmicas.",
+                time: "3 min"
+            },
+            {
+                id: '2',
+                title: "Nova geração de smartphones chega ao mercado",
+                category: "Tecnologia",
+                image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80",
+                excerpt: "Dispositivos mais rápidos, leves e com chips dedicados à inteligência artificial nativa.",
+                content: "As principais fabricantes do setor anunciaram a nova linha de smartphones dobráveis e transparentes equipados com processadores neuromárficos. Os novos aparelhos executam modelos complexos de linguagem e computação espacial diretamente no dispositivo, sem dependência de conexão na nuvem.",
+                time: "5 min"
+            },
+            {
+                id: '3',
+                title: "Exploração espacial cresce novamente",
+                category: "Ciência",
+                image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80",
+                excerpt: "Agências espaciais e empresas privadas planejam novas missões tripuladas para a Lua e Marte.",
+                content: "A nova era espacial ganhou forte impulso em 2026. Parcerias público-privadas concluíram com sucesso testes de habitats sustentáveis em solo lunar. A próxima meta contempla a primeira estação permanente focada na mineração mineral limpa e pesquisa biológica fora da Terra.",
+                time: "4 min"
+            },
+            {
+                id: '4',
+                title: "Economia digital em expansão acelerada",
+                category: "Economia",
+                image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=600&q=80",
+                excerpt: "Criptomoedas reguladas, CBDCs e pagamentos por aproximação biométrica redefinem o varejo.",
+                content: "O ecossistema financeiro global passou por uma transição massiva. Com mais de 80% das transações mundiais digitalizadas, economias emergentes ganham destaque pela rápida adoção de contratos inteligentes e soluções descentralizadas com custo operacional mínimo.",
+                time: "3 min"
+            },
+            {
+                id: '5',
+                title: "Carros elétricos dominam as vendas urbanas",
+                category: "Tecnologia",
+                image: "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=400&q=80",
+                excerpt: "Baterias de estado sólido garantem recargas completas em menos de 5 minutos nas grandes capitais.",
+                content: "Os veículos a combustão já representam minoria nas vendas das metrópoles. Graças aos avanços em baterias de lítio-enxofre e estado sólido, o tempo de recarga diminuiu drasticamente, acompanhado por amplas redes urbanas de estações ultrarrápidas de recarga solar.",
+                time: "4 min"
+            },
+            {
+                id: '6',
+                title: "Avanços em IA revolucionam a educação digital",
+                category: "Tecnologia",
+                image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=400&q=80",
+                excerpt: "Tutores de IA personalizados adaptam metodologias ao ritmo de cada estudante em tempo real.",
+                content: "Plataformas educacionais públicas e privadas integraram agentes virtuais interativos capazes de mapear dificuldades específicas de alunos. O aprendizado torna-se hiper-individualizado, elevando as taxas globais de retenção e engajamento acadêmico.",
+                time: "3 min"
+            }
+        ];
+
+        let savedArticles = JSON.parse(localStorage.getItem('news_saved')) || [];
+
+        // Renderizar Notícias no Feed
+        function renderNews(articles) {
+            const newsGrid = document.getElementById('newsGrid');
+            newsGrid.innerHTML = '';
+
+            if (articles.length === 0) {
+                newsGrid.innerHTML = `<p style="color: var(--text-secondary); grid-column: 1/-1; padding: 2rem; text-align: center;">Nenhuma notícia encontrada.</p>`;
+                return;
+            }
+
+            articles.forEach(article => {
+                const isSaved = savedArticles.includes(article.id);
+                const card = document.createElement('div');
+                card.className = 'news-card';
+                card.innerHTML = `
+                    <div class="card-img-box" onclick="openModalById('${article.id}')">
+                        <img src="${article.image}" alt="${article.title}">
+                    </div>
+                    <div class="card-content">
+                        <span class="tag-badge" style="font-size: 0.7rem; padding: 3px 10px;">${article.category}</span>
+                        <h3 class="card-title" onclick="openModalById('${article.id}')">${article.title}</h3>
+                        <p class="card-excerpt">${article.excerpt}</p>
+                        <div class="card-footer">
+                            <span><i class="fa-regular fa-clock"></i> ${article.time} de leitura</span>
+                            <button class="bookmark-btn ${isSaved ? 'saved' : ''}" onclick="toggleSave('${article.id}', event)">
+                                <i class="${isSaved ? 'fa-solid' : 'fa-regular'} fa-bookmark"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                newsGrid.appendChild(card);
+            });
+            updateSavedCount();
+        }
+
+        // Filtro por Categoria
+        function filterCategory(category, element = null) {
+            if (element) {
+                document.querySelectorAll('.category-pill').forEach(btn => btn.classList.remove('active'));
+                element.classList.add('active');
+            }
+
+            if (category === 'todos') {
+                renderNews(newsArticles);
+            } else if (category === 'favoritos') {
+                const filtered = newsArticles.filter(a => savedArticles.includes(a.id));
+                renderNews(filtered);
+            } else {
+                const filtered = newsArticles.filter(a => a.category.toLowerCase() === category.toLowerCase());
+                renderNews(filtered);
+            }
+        }
+
+        // Pesquisa de Notícias
+        function searchNews() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const filtered = newsArticles.filter(a => 
+                a.title.toLowerCase().includes(query) || 
+                a.excerpt.toLowerCase().includes(query) ||
+                a.category.toLowerCase().includes(query)
+            );
+            renderNews(filtered);
+        }
+
+        // Favoritar / Salvar Notícia
+        function toggleSave(id, event) {
+            event.stopPropagation();
+            if (savedArticles.includes(id)) {
+                savedArticles = savedArticles.filter(item => item !== id);
+                showToast("Notícia removida dos salvos");
+            } else {
+                savedArticles.push(id);
+                showToast("Notícia salva com sucesso!");
+            }
+            localStorage.setItem('news_saved', JSON.stringify(savedArticles));
+            renderNews(newsArticles);
+        }
+
+        function updateSavedCount() {
+            document.getElementById('savedCount').textContent = savedArticles.length;
+        }
+
+        // Abrir Modal
+        function openModalById(id) {
+            const article = newsArticles.find(a => a.id === id);
+            if (article) openModal(article);
+        }
+
+        function openModal(article) {
+            document.getElementById('modalCategory').textContent = article.category;
+            document.getElementById('modalTitle').textContent = article.title;
+            document.getElementById('modalImg').src = article.image;
+            document.getElementById('modalContent').textContent = article.content;
+            document.getElementById('modalMeta').innerHTML = `Por Gabriel Guzela • ${article.time} de leitura • NewsHub 2026`;
+            document.getElementById('newsModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('newsModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+            window.speechSynthesis.cancel();
+        }
+
+        // Ouvir Matéria (Sintetizador de Voz)
+        function speakText() {
+            window.speechSynthesis.cancel();
+            const text = document.getElementById('modalContent').textContent;
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'pt-BR';
+            window.speechSynthesis.speak(utterance);
+            showToast("Iniciando áudio da notícia...");
+        }
+
+        // Compartilhar
+        function shareArticle() {
+            if (navigator.share) {
+                navigator.share({
+                    title: document.getElementById('modalTitle').textContent,
+                    url: window.location.href
+                });
+            } else {
+                navigator.clipboard.writeText(window.location.href);
+                showToast("Link copiado para a área de transferência!");
+            }
+        }
+
+        // Alternar Tema (Escuro / Claro)
+        function toggleTheme() {
+            const html = document.documentElement;
+            const themeIcon = document.getElementById('themeIcon');
+            if (html.getAttribute('data-theme') === 'dark') {
+                html.setAttribute('data-theme', 'light');
+                themeIcon.className = 'fa-solid fa-sun';
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                themeIcon.className = 'fa-solid fa-moon';
+            }
+        }
+
+        // Newsletter Form
+        function handleNewsletter(e) {
+            e.preventDefault();
+            showToast("Obrigado por se inscrever no NewsHub!");
+            e.target.reset();
+        }
+
+        // Toast Notification
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+
+        // Scroll Progress Bar
+        window.onscroll = function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progress-bar').style.width = scrolled + "%";
+        };
+
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', () => {
+            renderNews(newsArticles);
+        });
+    </script>
+</body>
+</html>
